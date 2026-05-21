@@ -109,25 +109,29 @@ const createTicket = (req, res) => {
     return fail(res, errores, 400);
   }
 
-  const query = `
+ const usuario_id = req.user.id;
+
+const query = `
     INSERT INTO tickets (
       titulo,
       descripcion,
       estado,
       prioridad,
+      usuario_id,
       fecha_creacion
     ) 
-    VALUES (?, ?, ?, ?, NOW())
-    `;
+    VALUES (?, ?, ?, ?, ?, NOW())
+`;
 
   db.query(
-    query,
-    [
-      titulo,
-      descripcion,
-      estado || 'abierto',
-      prioridad || 'baja'
-    ],
+  query,
+  [
+    titulo,
+    descripcion,
+    estado || 'abierto',
+    prioridad || 'baja',
+    usuario_id
+  ],
     (err, result) => {
       if (err) return fail(res, 'Error al crear ticket', 500, err);
 
