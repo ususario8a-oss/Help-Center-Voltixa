@@ -16,8 +16,8 @@ const getTickets = (req, res) => {
   const limit = parseInt(limite);
   const offset = (parseInt(pagina) - 1) * limit;
 
-  let countQuery = 'SELECT COUNT(*) AS total FROM tickets';
-  let ticketsQuery = `
+let countQuery = 'SELECT COUNT(*) AS total FROM tickets';
+let ticketsQuery = `
     SELECT 
         tickets.id,
         tickets.titulo,
@@ -30,23 +30,17 @@ const getTickets = (req, res) => {
     FROM tickets
     LEFT JOIN usuarios
         ON tickets.usuario_id = usuarios.id
-    ORDER BY tickets.fecha_creacion DESC
 `;
 
-  let queryParams = [];
+let queryParams = [];
 
-  // Si viene estado, filtrar
-  if (estado) {
-
+if (estado) {
     countQuery += ' WHERE estado = ?';
-
-    ticketsQuery += ' WHERE estado = ?';
-
+    ticketsQuery += ' WHERE tickets.estado = ?';
     queryParams.push(estado);
-  }
+}
 
-  ticketsQuery += ' LIMIT ? OFFSET ?';
-
+ticketsQuery += ' ORDER BY tickets.fecha_creacion DESC LIMIT ? OFFSET ?';
   db.query(countQuery, queryParams, (err, countResult) => {
 
     if (err) {
