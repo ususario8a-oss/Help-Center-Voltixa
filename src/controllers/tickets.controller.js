@@ -29,7 +29,7 @@ let ticketsQuery = `
         usuarios.email AS usuario_email
     FROM tickets
     LEFT JOIN usuarios
-        ON tickets.usuario_id = usuarios.id
+        ON tickets.usuario_id = usuarios.id_usuario
 `;
 
 let queryParams = [];
