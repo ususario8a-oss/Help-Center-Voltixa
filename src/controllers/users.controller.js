@@ -114,33 +114,39 @@ const cambiarRol = (req, res, next) => {
 
 // Eliminar usuario
 const deleteUser = (req, res) => {
-
     const { id } = req.params;
 
-    const sql = 'DELETE FROM usuarios WHERE id = ?';
+    const sqlTickets = 'DELETE FROM tickets WHERE usuario_id = ?';
+    const sqlUsuario = 'DELETE FROM usuarios WHERE id = ?';
 
-    db.query(sql, [id], (error, result) => {
-
+    db.query(sqlTickets, [id], (error) => {
         if (error) {
             console.error(error);
-
             return res.status(500).json({
-                error: 'Error eliminando usuario'
+                error: 'Error eliminando tickets del usuario'
             });
         }
 
-        if (result.affectedRows === 0) {
-            return res.status(404).json({
-                error: 'Usuario no encontrado'
-            });
-        }
+        db.query(sqlUsuario, [id], (error, result) => {
+            if (error) {
+                console.error(error);
+                return res.status(500).json({
+                    error: 'Error eliminando usuario'
+                });
+            }
 
-        res.json({
-            message: 'Usuario eliminado correctamente'
+            if (result.affectedRows === 0) {
+                return res.status(404).json({
+                    error: 'Usuario no encontrado'
+                });
+            }
+
+            res.json({
+                message: 'Usuario y sus tickets eliminados correctamente'
+            });
         });
     });
 };
-
 
 module.exports = {
   registerUser,
