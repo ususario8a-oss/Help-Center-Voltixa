@@ -4,7 +4,8 @@ const router = express.Router();
 const {
   registerUser,
   getUsers,
-  cambiarRol
+  cambiarRol,
+  deleteUser
 } = require('../controllers/users.controller');
 
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -27,6 +28,14 @@ router.put(
   authMiddleware,
   roleMiddleware('admin'),
   cambiarRol
+);
+
+// Eliminar usuario (solo admin)
+router.delete(
+  '/:id',
+  authMiddleware,
+  roleMiddleware('admin'),
+  deleteUser
 );
 
 module.exports = router;

@@ -412,6 +412,13 @@ async function cargarUsuarios() {
 
                         </button>
 
+                        <button
+                        class="btn-eliminar"
+                        onclick="eliminarUsuario(${user.id})">
+
+                        Eliminar Usuario
+
+                    </button>
                     </div>
                 `;
             });
@@ -537,5 +544,39 @@ async function guardarRol(id) {
         console.error(error);
 
         alert('Error actualizando rol');
+    }
+}
+
+async function eliminarUsuario(id) {
+
+    const confirmar = confirm('¿Seguro que deseas eliminar este usuario?');
+
+    if (!confirmar) return;
+
+    try {
+
+        const response = await fetch(
+            `https://help-center-voltixa.onrender.com/api/users/${id}`,
+            {
+                method: 'DELETE',
+                headers: getHeaders()
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || 'Error eliminando usuario');
+        }
+
+        alert(data.message);
+
+        cargarUsuarios();
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert('Error eliminando usuario');
     }
 }
