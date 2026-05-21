@@ -18,16 +18,20 @@ const getTickets = (req, res) => {
 
   let countQuery = 'SELECT COUNT(*) AS total FROM tickets';
   let ticketsQuery = `
-      SELECT 
-        id,
-        titulo,
-        descripcion,
-        estado,
-        prioridad,
-        fecha_creacion
-      FROM tickets
-      ORDER BY fecha_creacion DESC
-  `;
+    SELECT 
+        tickets.id,
+        tickets.titulo,
+        tickets.descripcion,
+        tickets.estado,
+        tickets.prioridad,
+        tickets.fecha_creacion,
+        tickets.usuario_id,
+        usuarios.email AS usuario_email
+    FROM tickets
+    LEFT JOIN usuarios
+        ON tickets.usuario_id = usuarios.id
+    ORDER BY tickets.fecha_creacion DESC
+`;
 
   let queryParams = [];
 

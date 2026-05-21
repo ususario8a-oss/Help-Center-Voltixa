@@ -248,7 +248,7 @@ async function cargarTickets() {
 
                                     <p>
                                         <strong>Usuario:</strong>
-                                        ${ticket.usuario_id || 'No disponible'}
+                                        ${ticket.usuario_email || 'No disponible'}
                                     </p>
 
                                     <p>
