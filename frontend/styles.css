@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.card {
+    background: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input, textarea, select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    width: 100%;
+}
+
+button.danger {
+    background: #dc3545;
+}
+
+button.danger:hover {
+    background: #a71d2a;
+}
+
+li {
+    background: #eef2f7;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #007BFF;
+}
+
+.mensaje {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    text-align: center;
+}
+
+h1 {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+}
+
+.menu {
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button.danger {
+    background-color: #dc3545;
+}
+
+#contenido {
+    background: white;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* ORGANIZACIÓN DE TICKETS */
+
+.estado-section{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.estado-titulo{
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 6px solid #2563eb;
+    background-color: #e0e7ff;
+    border-radius: 8px;
+    color: #1e3a8a;
+}
+
+.tickets-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.prioridad-container{
+    width: 100%;
+}
+
+.prioridad-titulo{
+    margin: 20px 0 15px 0;
+    padding: 8px;
+    border-radius: 6px;
+    color: white;
+}
+
+.prioridad-alta{
+    background-color: #dc3545;
+}
+
+.prioridad-media{
+    background-color: #ffc107;
+    color: black;
+}
+
+.prioridad-baja{
+    background-color: #28a745;
+}
+
+.titulo-seccion{
+    width: 100%;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: #f4f6f9;
+            padding: 30px;
+        }
+
+        .header{
+            background-color: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .header h1{
+            margin-bottom: 10px;
+        }
+
+        .header p{
+            color: #cbd5e1;
+        }
+
+        .menu{
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .menu button{
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .menu button:hover{
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .menu .danger{
+            background-color: #dc2626;
+        }
+
+        #contenido{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card{
+            background-color: white;
+            width: 320px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover{
+            transform: translateY(-5px);
+        }
+
+        .card h3{
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        .card p{
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        .bienvenida{
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .bienvenida h2{
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .bienvenida p{
+            color: #475569;
+        }
+
+        .titulo-seccion{
+            width: 100%;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        .usuarios-grid{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .usuario-card{
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            border-left: 8px solid #2563eb;
+            transition: 0.3s;
+        }
+
+        .usuario-card:hover{
+            transform: translateY(-5px);
+        }
+
+        .estado-section{
+            width: 100%;
+        }
+
+        .estado-titulo{
+            margin: 20px 0;
+            color: #1e293b;
+        }
+
+        .tickets-grid{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .prioridad-container{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .prioridad-titulo{
+            margin-bottom: 15px;
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="header">
+        <h1>📊 Panel Administrativo</h1>
+        <p>Sistema Help Desk - Gestión de Tickets y Usuarios</p>
+    </div>
+    
+    <div class="menu">
+        <button onclick="cargarTickets()">📄 Ver Tickets</button>
+
+        <button onclick="cargarUsuarios()">👤 Ver Usuarios</button>
+
+        <button onclick="logout()" class="danger">
+            🚪 Cerrar sesión
+        </button>
+    </div>
+    
+    <div id="contenido">
+
+        <div class="bienvenida">
+            <h2>Bienvenido Administrador</h2>
+
+            <p>
+                Desde este panel puedes visualizar tickets,
+                consultar usuarios y administrar el sistema.
+            </p>
+        </div>
+
+    </div>
+    
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
