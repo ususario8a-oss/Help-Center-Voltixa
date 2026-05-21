@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:3000/api/tickets';
-const LOGIN_URL = 'http://localhost:3000/api/auth/login';
+const API_URL = 'https://help-center-voltixa.onrender.com/api/tickets';
+const LOGIN_URL = 'https://help-center-voltixa.onrender.com/api/auth/login';
 
 function getHeaders() {
     const token = localStorage.getItem('token');
@@ -311,7 +311,7 @@ async function register() {
     try {
 
         const response = await fetch(
-            'http://localhost:3000/api/users/register',
+            'https://help-center-voltixa.onrender.com/api/users/register',
             {
                 method: 'POST',
 

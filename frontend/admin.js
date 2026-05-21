@@ -1,5 +1,5 @@
-const API_TICKETS = 'http://localhost:3000/api/tickets';
-const API_USERS = 'http://localhost:3000/api/users';
+const API_TICKETS = 'https://help-center-voltixa.onrender.com/api/tickets';
+const API_USERS = 'https://help-center-voltixa.onrender.com/api/users';
 
 let filtroEstadoActual = 'todos';
 let filtroPrioridadActual = 'todos';
@@ -437,7 +437,7 @@ async function guardarEstado(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/api/tickets/${id}/estado`,
+            `https://help-center-voltixa.onrender.com/api/tickets/${id}/estado`,
             {
                 method: 'PUT',
 
@@ -474,7 +474,7 @@ async function guardarPrioridad(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/api/tickets/${id}`,
+            `https://help-center-voltixa.onrender.com/api/tickets/${id}`,
             {
                 method: 'PUT',
 
@@ -512,7 +512,7 @@ async function guardarRol(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/api/users/${id}/rol`,
+            `https://help-center-voltixa.onrender.com/api/users/${id}/rol`,
             {
                 method: 'PUT',
 

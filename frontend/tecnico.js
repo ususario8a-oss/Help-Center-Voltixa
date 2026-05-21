@@ -1,4 +1,4 @@
-const API_TICKETS = 'http://localhost:3000/api/tickets';
+const API_TICKETS = 'https://help-center-voltixa.onrender.com/api/tickets';
 
 let filtroEstadoActual = 'todos';
 let filtroPrioridadActual = 'todos';
@@ -238,7 +238,7 @@ async function guardarEstado(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/api/tickets/${id}/estado`,
+            `https://help-center-voltixa.onrender.com/api/tickets/${id}/estado`,
             {
                 method: 'PUT',
 
