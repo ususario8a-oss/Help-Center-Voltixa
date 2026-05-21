@@ -35,12 +35,18 @@ let ticketsQuery = `
 let queryParams = [];
 
 if (estado) {
+
     countQuery += ' WHERE estado = ?';
+
     ticketsQuery += ' WHERE tickets.estado = ?';
+
     queryParams.push(estado);
 }
 
-ticketsQuery += ' ORDER BY tickets.fecha_creacion DESC LIMIT ? OFFSET ?';
+ticketsQuery += `
+    ORDER BY tickets.fecha_creacion DESC
+    LIMIT ? OFFSET ?
+`;
   db.query(countQuery, queryParams, (err, countResult) => {
 
     if (err) {
